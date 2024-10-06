@@ -1,0 +1,32 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding: 1rem;
+}
+
+.links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+}
+
+.links a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+}
+
+.links a:hover {
+    color: #e1e1d7;
+    text-decoration: line-through;
+}
+
+.active {
+    background-color: #bcbcb7;
+    color: #181817;
+    border-radius: 4px;
+    padding: 0.5rem 1rem;
+}

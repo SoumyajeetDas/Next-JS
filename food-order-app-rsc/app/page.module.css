@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Sedan:ital@0;1&display=swap');
+
+#homepage_header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 90%;
+    margin: 9rem auto 0 auto;
+    gap: 5rem;
+}
+
+#homepage_section h1 {
+    font-family: "Sedan", serif;
+    font-style: normal;
+    font-size: 1.8rem;
+    background: linear-gradient(to right, rgb(255, 68, 0), orange);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+#homepage_section>p {
+    font-family: "Sedan", serif;
+    font-style: normal;
+    color: #fff;
+}
+
+#cta {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+#community {
+    text-decoration: none;
+    color: #cb5715;
+    font-size: 1.20rem;
+}
+
+#meals {
+    text-decoration: none;
+    color: white;
+}
+
+#meals div {
+    background: linear-gradient(to right, rgb(255, 68, 0), orange);
+    font-size: 1.20rem;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+}
+
+.knowledge_section {
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+    font-size: 1.5rem;
+    max-width: 50rem;
+    width: 90%;
+    margin: 5.5rem auto;
+    text-align: center;
+    font-family: "Sedan", serif;
+    font-style: normal;
+}
