@@ -2,6 +2,7 @@ import { auth } from '@/auth';
 import Image from 'next/image';
 import { redirect } from 'next/navigation';
 import React from 'react';
+import Logout from '../component/Logout';
 
 const HomePage = async () => {
   const session = await auth();
@@ -13,14 +14,18 @@ const HomePage = async () => {
       <h1 className="text-3xl my-2">
         Welcome, {session?.user?.name} to Server Component
       </h1>
-      <Image
-        src={session?.user?.image as string}
-        alt={session?.user?.name as string}
-        width={72}
-        height={72}
-        className="rounded-full"
-      />
-      {/* <Logout /> */}
+
+      {session.user.name && session.user.image && (
+        <Image
+          src={session?.user?.image as string}
+          alt={session?.user?.name as string}
+          width={72}
+          height={72}
+          className="rounded-full"
+        />
+      )}
+
+      <Logout />
     </div>
   );
 };
