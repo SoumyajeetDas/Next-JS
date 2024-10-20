@@ -3,16 +3,9 @@ import dbConnect from '@/lib/dbConnect';
 import { createUser } from '@/queries/users';
 import { NextRequest } from 'next/server';
 import bcrypt from 'bcryptjs';
-import { auth } from '@/auth';
 
 export const POST = async (req: NextRequest) => {
   const { name, email, password } = await req.json();
-
-  const session = await auth();
-
-  if (!session?.user) {
-    return Response.json({ error: 'Unauthorized' }, { status: 401 });
-  }
 
   // Create a DB Conenction
   await dbConnect();
