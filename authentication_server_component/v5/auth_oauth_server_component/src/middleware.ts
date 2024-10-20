@@ -2,6 +2,8 @@ import NextAuth, { NextAuthConfig } from 'next-auth';
 import { NextRequest, NextResponse } from 'next/server';
 import { authConfig } from './auth.config';
 
+// Remember Middleware only needs the session in the authconfig to work.
+// Reference : https://www.youtube.com/watch?v=jHrjnZM26i4&list=PLIJrr73KDmRwz_7QUvQ9Az82aDM9I8L_8&index=18&t=1569s
 const { auth } = NextAuth(authConfig as NextAuthConfig);
 
 export async function middleware(request: NextRequest) {
