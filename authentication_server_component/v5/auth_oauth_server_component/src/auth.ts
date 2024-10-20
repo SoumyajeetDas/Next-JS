@@ -1,8 +1,11 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import NextAuth from 'next-auth';
 import GoogleProvider from 'next-auth/providers/google';
 import GitHubProvider from 'next-auth/providers/github';
 import CredentialsProvider from 'next-auth/providers/credentials';
-import { getUserByEmail } from './app/data/users';
+import { User } from './model/User';
+import bcrypt from 'bcryptjs';
+import { authConfig } from './auth.config';
 
 export const {
   handlers: { GET, POST },
@@ -10,38 +13,45 @@ export const {
   signIn,
   signOut,
 } = NextAuth({
-  session: {
-    strategy: 'jwt',
-  },
+  ...authConfig,
   providers: [
     CredentialsProvider({
-      async authorize(credentials: any) {
-        if (credentials === null) return null;
+      async authorize(credentials: Partial<Record<string, unknown>>) {
+        if (!credentials) return null;
 
         try {
-          const user = getUserByEmail(credentials?.email);
+          const user = await User.findOne({
+            email: credentials.email,
+          });
 
-          if (user) {
-            if (user?.password === credentials?.password) {
-              return user;
-            } else {
-              throw new Error('Password does not match');
-            }
-          } else {
+          if (!user) {
             throw new Error('User not found');
           }
-        } catch (e: any) {
-          return null;
+
+          const isMatch = await bcrypt.compare(
+            (credentials as { email: string; password: string }).password,
+            user.password,
+          );
+
+          if (!isMatch) {
+            throw new Error('Email or Password is not correct');
+          }
+
+          return user;
+        } catch (error) {
+          if (error instanceof Error) {
+            throw new Error(error.message);
+          }
+          throw new Error('An unexpected error occurred');
         }
       },
     }),
     GoogleProvider({
       clientId: process.env.GOOGLE_CLIENT_ID as string,
       clientSecret: process.env.GOOGLE_CLIENT_SECRET as string,
-
       authorization: {
         params: {
-          prompt: 'consent', // This will ask everytime whether we want to authorize the app or not
+          prompt: 'consent',
           access_type: 'offline',
           response_type: 'code',
         },
@@ -50,14 +60,16 @@ export const {
     GitHubProvider({
       clientId: process.env.GITHUB_CLIENT_ID as string,
       clientSecret: process.env.GITHUB_CLIENT_SECRET as string,
-
       authorization: {
         params: {
-          prompt: 'consent', // This will ask everytime whether we want to authorize the app or not
+          prompt: 'consent',
           access_type: 'offline',
           response_type: 'code',
         },
       },
     }),
   ],
+  session: {
+    strategy: 'jwt',
+  },
 });
