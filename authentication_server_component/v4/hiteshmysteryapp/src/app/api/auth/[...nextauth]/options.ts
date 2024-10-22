@@ -81,6 +81,9 @@ export const authOptions: NextAuthOptions = {
     // When using JSON Web Tokens the jwt() callback is invoked before the session() callback, so anything you add to the JSON Web Token
     // will be immediately available in the session callback, like for example an access_token or id from a provider.
     async jwt({ token, user }) {
+
+      // The user and account information comes up for the first time when we login. This basically tells us that the user is logged in for the first time.
+      // From subsequent user value will not be passed
       if (user) {
         // token by default doesn't contain much fieds. So, we are adding more user info in the token.
         // This user info comes from authorize() in CrederntialsProvider
@@ -92,6 +95,9 @@ export const authOptions: NextAuthOptions = {
         token.isAcceptingMessages = user.isAcceptingMessages;
         token.username = user.username;
       }
+
+      // This token structure gets created right on the first time when user is logged in. From subsequesnt request you will get same structure of token 
+      // with whatever fields you have added in the first time.
       return token;
     },
   },
