@@ -9,7 +9,7 @@ const prismaClientSingleton = () => {
   });
 
   const adapter = new PrismaNeon(neon);
-  return new PrismaClient(adapter);
+  return new PrismaClient({ adapter });
 };
 
 declare global {

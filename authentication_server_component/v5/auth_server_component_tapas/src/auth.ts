@@ -6,6 +6,7 @@ import CredentialsProvider from 'next-auth/providers/credentials';
 import { User } from './model/User';
 import bcrypt from 'bcryptjs';
 import { authConfig } from './auth.config';
+import dbConnect from './lib/dbConnect';
 
 export const {
   handlers: { GET, POST },
@@ -20,6 +21,7 @@ export const {
         if (!credentials) return null;
 
         try {
+          await dbConnect();
           const user = await User.findOne({
             email: credentials.email,
           });
@@ -47,8 +49,11 @@ export const {
       },
     }),
     GoogleProvider({
-      clientId: process.env.GOOGLE_CLIENT_ID as string,
-      clientSecret: process.env.GOOGLE_CLIENT_SECRET as string,
+      // We don't need to provide the clientId and clientSecret here as it will be automatically provided from the .env file. This
+      // Only we have to keep in mind the env variable should be in the format of AUTH_{PROVIDER}_{ID|SECRET}
+
+      // clientId: process.env.AUTH_GOOGLE_ID as string,
+      // clientSecret: process.env.AUTH_GOOGLE_SECRET as string,
       authorization: {
         params: {
           prompt: 'consent',
@@ -58,8 +63,11 @@ export const {
       },
     }),
     GitHubProvider({
-      clientId: process.env.GITHUB_CLIENT_ID as string,
-      clientSecret: process.env.GITHUB_CLIENT_SECRET as string,
+      // We don't need to provide the clientId and clientSecret here as it will be automatically provided from the .env file. This
+      // Only we have to keep in mind the env variable should be in the format of AUTH_{PROVIDER}_{ID|SECRET}
+
+      // clientId: process.env.AUTH_GITHUB_ID as string,
+      // clientSecret: process.env.AUTH_GITHUB_SECRET as string,
       authorization: {
         params: {
           prompt: 'consent',
@@ -69,6 +77,31 @@ export const {
       },
     }),
   ],
+  callbacks: {
+    async jwt({ token, user, account }) {
+      // Just for checking added this
+      console.log('User', user);
+
+      console.log('Account', account);
+
+      if (user) {
+        token.id = user.id?.toString();
+        token.username = user.name;
+      }
+
+      console.log('Token', token);
+
+      return token;
+    },
+
+    async session({ session }) {
+      // console.log('Token from Session', token);
+      return session;
+    },
+  },
+  // jwt: {
+  //   maxAge: 60, // 60 seconds
+  // },
   session: {
     strategy: 'jwt',
   },
