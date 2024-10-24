@@ -3,12 +3,18 @@ import { PrismaAdapter } from '@auth/prisma-adapter';
 import prisma from './lib/prisma';
 import GoogleProvider from 'next-auth/providers/google';
 import GitHubProvider from 'next-auth/providers/github';
+import { Adapter } from 'next-auth/adapters';
 
 export const { handlers, signIn, signOut, auth } = NextAuth({
+  trustHost: true,
   session: {
     strategy: 'database',
+    // maxAge: 60,
   },
-  adapter: PrismaAdapter(prisma),
+  adapter: PrismaAdapter(prisma) as Adapter,
+  // pages: {
+  //   signIn: '/signin',
+  // },
   providers: [
     GoogleProvider({
       // We don't need to provide the clientId and clientSecret here as it will be automatically provided from the .env file. This

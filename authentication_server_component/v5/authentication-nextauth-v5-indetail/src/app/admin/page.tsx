@@ -1,11 +1,23 @@
-import { Metadata } from "next";
+import { auth } from '@/auth';
+import { Metadata } from 'next';
+import { redirect } from 'next/navigation';
 
 export const metadata: Metadata = {
-  title: "Admin",
+  title: 'Admin',
 };
 
-export default function Page() {
+export default async function Page() {
   // TODO: Redirect non-admin users
+  const session = await auth();
+  if (!session?.user) {
+    redirect('api/auth/signin?callbackUrl=/admin');
+  } else {
+    const role = session?.user?.role;
+
+    if (!role || role !== 'admin') {
+      throw new Error('Unauthorized');
+    }
+  }
 
   return (
     <main className="mx-auto my-10 space-y-3">

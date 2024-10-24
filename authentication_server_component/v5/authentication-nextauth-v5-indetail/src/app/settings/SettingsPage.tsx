@@ -1,6 +1,6 @@
-"use client";
+'use client';
 
-import { Button } from "@/components/ui/button";
+import { Button } from '@/components/ui/button';
 import {
   Form,
   FormControl,
@@ -9,31 +9,32 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
-import { useToast } from "@/components/ui/use-toast";
-import { UpdateProfileValues, updateProfileSchema } from "@/lib/validation";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "react-hook-form";
-import { updateProfile } from "./actions";
+} from '@/components/ui/form';
+import { Input } from '@/components/ui/input';
+import { useToast } from '@/components/ui/use-toast';
+import { UpdateProfileValues, updateProfileSchema } from '@/lib/validation';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { useForm } from 'react-hook-form';
+import { updateProfile } from './actions';
+import { User } from 'next-auth';
 
-export default function SettingsPage() {
+export default function SettingsPage({ user }: { user: User }) {
   const { toast } = useToast();
 
   const form = useForm<UpdateProfileValues>({
     resolver: zodResolver(updateProfileSchema),
     // TODO: Add default value from current user
-    defaultValues: { name: "" },
+    defaultValues: { name: user?.name ?? '' },
   });
 
   async function onSubmit(data: UpdateProfileValues) {
     try {
       await updateProfile(data);
-      toast({ description: "Profile updated." });
+      toast({ description: 'Profile updated.' });
     } catch (error) {
       toast({
-        variant: "destructive",
-        description: "An error occurred. Please try again.",
+        variant: 'destructive',
+        description: 'An error occurred. Please try again.',
       });
     }
   }
