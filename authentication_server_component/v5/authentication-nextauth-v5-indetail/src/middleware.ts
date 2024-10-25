@@ -7,7 +7,6 @@ import { auth } from './auth';
 
 export async function middleware(request: NextRequest) {
   const session = await auth();
-  console.log(request.nextUrl);
 
   if (!session?.user) {
     // Whatever you give in callback that is where it gets redirected after logging in.

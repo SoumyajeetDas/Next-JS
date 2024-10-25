@@ -4,6 +4,7 @@ import './globals.css';
 import { Toaster } from '@/components/ui/toaster';
 import NavBar from '@/components/NavBar';
 import { Suspense } from 'react';
+import { SessionProvider } from 'next-auth/react';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -24,11 +25,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Suspense fallback={<h1 className="text-center">Loading..</h1>}>
+        {/* <Suspense fallback={<h1 className="text-center">Loading..</h1>}>
           <NavBar />
-        </Suspense>
-        {children}
-        <Toaster />
+        </Suspense> */}
+        <SessionProvider refetchOnWindowFocus={false}>
+          <NavBar />
+          {children}
+          <Toaster />
+        </SessionProvider>
       </body>
     </html>
   );

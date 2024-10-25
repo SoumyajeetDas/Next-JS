@@ -13,7 +13,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from './ui/dropdown-menu';
-import { signOut } from '@/auth';
+import { signOut } from 'next-auth/react';
 
 interface UserButtonProps {
   user: User;
@@ -56,7 +56,9 @@ export default function UserButton({ user }: UserButtonProps) {
         <DropdownMenuSeparator />
         <DropdownMenuItem asChild>
           {/* TODO: Add a logout functionality */}
-          <form
+
+          {/* During Server side component */}
+          {/* <form
             action={async () => {
               'use server';
               await signOut();
@@ -65,7 +67,15 @@ export default function UserButton({ user }: UserButtonProps) {
             <button className="flex w-full items-center">
               <LogOut className="mr-2 h-4 w-4" /> Sign Out
             </button>
-          </form>
+          </form> */}
+
+          {/* During Client Side Component */}
+          <Button
+            onClick={() => signOut({ redirectTo: '/' })}
+            className="flex w-full items-center"
+          >
+            <LogOut className="mr-2 h-4 w-4" /> Sign Out
+          </Button>
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>

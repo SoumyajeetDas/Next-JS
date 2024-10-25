@@ -17,9 +17,12 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
 import { updateProfile } from './actions';
 import { User } from 'next-auth';
+import { useSession } from 'next-auth/react';
 
 export default function SettingsPage({ user }: { user: User }) {
   const { toast } = useToast();
+
+  const session = useSession();
 
   const form = useForm<UpdateProfileValues>({
     resolver: zodResolver(updateProfileSchema),
@@ -31,6 +34,7 @@ export default function SettingsPage({ user }: { user: User }) {
     try {
       await updateProfile(data);
       toast({ description: 'Profile updated.' });
+      session.update();
     } catch (error) {
       toast({
         variant: 'destructive',

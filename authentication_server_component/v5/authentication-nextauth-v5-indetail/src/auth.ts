@@ -7,6 +7,13 @@ import { Adapter } from 'next-auth/adapters';
 
 export const { handlers, signIn, signOut, auth } = NextAuth({
   trustHost: true,
+
+  // Choose how you want to save the user session.
+  // The default is `"jwt"`, an encrypted JWT (JWE) stored in the session cookie.
+  // If you use an `adapter` however, we default it to `"database"` instead. So session is not needed.
+  // You can still force a JWT session by explicitly defining `"jwt"`.
+  // When using `"database"`, the session cookie will only contain a `sessionToken` value,
+  // which is used to look up the session in the database.
   session: {
     strategy: 'database',
     // maxAge: 60,
@@ -15,6 +22,15 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
   // pages: {
   //   signIn: '/signin',
   // },
+
+  // This will only be needed for Client Side Auth. Remember you also need Module Augmentation along with this to work. For Server side Auth
+  // the extra params automatically gets embded depending on the model. For TS Module Augmentation is needed to work with the extra params
+  callbacks: {
+    session({ session, user }) {
+      session.user.role = user.role;
+      return session;
+    },
+  },
   providers: [
     GoogleProvider({
       // We don't need to provide the clientId and clientSecret here as it will be automatically provided from the .env file. This
