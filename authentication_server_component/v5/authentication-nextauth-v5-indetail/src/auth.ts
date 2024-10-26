@@ -38,6 +38,20 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
 
       // clientId: process.env.AUTH_GOOGLE_ID as string,
       // clientSecret: process.env.AUTH_GOOGLE_SECRET as string,
+
+      // profile will return the user data from the Oauath provider. And that will be set into the DB. The advantage is you can add a field
+      // just like I have added role field here. And that will be set into the DB.
+      profile(profile) {
+        return {
+          id: profile.sub,
+          name: profile.name,
+          email: profile.email,
+          image: profile.picture,
+          accounts: profile.accounts,
+          sessions: profile.sessions,
+          role: 'admin',
+        };
+      },
       authorization: {
         params: {
           prompt: 'consent',
@@ -52,6 +66,20 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
 
       // clientId: process.env.AUTH_GITHUB_ID as string,
       // clientSecret: process.env.AUTH_GITHUB_SECRET as string,
+
+      // profile will return the user data from the Oauath provider. And that will be set into the DB. The advantage is you can add a field
+      // just like I have added role field here. And that will be set into the DB.
+      profile(profile) {
+        return {
+          id: profile.id.toString(),
+          name: profile.name,
+          email: profile.email,
+          image: profile.avatar_url,
+          accounts: profile.accounts,
+          sessions: profile.sessions,
+          role: 'user',
+        };
+      },
       authorization: {
         params: {
           prompt: 'consent',

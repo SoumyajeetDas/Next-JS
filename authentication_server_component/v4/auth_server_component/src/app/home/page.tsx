@@ -1,11 +1,12 @@
-import { auth } from '@/auth';
 import Image from 'next/image';
 import { redirect } from 'next/navigation';
 import React from 'react';
 import Logout from '../component/Logout';
+import { getServerSession } from 'next-auth';
+import { authOptions } from '../api/auth/[...nextauth]/options';
 
 const HomePage = async () => {
-  const session = await auth();
+  const session = await getServerSession(authOptions);
 
   if (!session?.user) redirect('/');
 

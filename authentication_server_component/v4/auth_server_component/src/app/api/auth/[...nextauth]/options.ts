@@ -1,22 +1,20 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import NextAuth from 'next-auth';
+import { NextAuthOptions } from 'next-auth';
 import GoogleProvider from 'next-auth/providers/google';
 import GitHubProvider from 'next-auth/providers/github';
 import CredentialsProvider from 'next-auth/providers/credentials';
-import { User } from './model/User';
 import bcrypt from 'bcryptjs';
-import { authConfig } from './auth.config';
-import dbConnect from './lib/dbConnect';
+import dbConnect from '@/lib/dbConnect';
+import { User } from '@/model/User';
 
-export const {
-  handlers: { GET, POST },
-  auth, // AUth can be used in any server side code execution.
-  signIn,
-  signOut,
-} = NextAuth({
-  ...authConfig,
+export const authOptions: NextAuthOptions = {
+  session: {
+    strategy: 'jwt',
+  },
   providers: [
     CredentialsProvider({
+      //@ts-ignore
       async authorize(credentials: Partial<Record<string, unknown>>) {
         if (!credentials) return null;
 
@@ -48,20 +46,19 @@ export const {
         }
       },
     }),
-    GoogleProvider({
-      // We don't need to provide the clientId and clientSecret here as it will be automatically provided from the .env file. This
-      // Only we have to keep in mind the env variable should be in the format of AUTH_{PROVIDER}_{ID|SECRET}
 
-      // clientId: process.env.AUTH_GOOGLE_ID as string,
-      // clientSecret: process.env.AUTH_GOOGLE_SECRET as string,
+    GitHubProvider({
+      clientId: process.env.GITHUB_ID as string,
+      clientSecret: process.env.GITHUB_SECRET as string,
 
       profile(profile) {
         return {
           ...profile,
-          id: profile.sub,
-          role: 'admin',
+          id: profile.id.toString(),
+          role: 'user',
         };
       },
+
       authorization: {
         params: {
           prompt: 'consent',
@@ -70,17 +67,16 @@ export const {
         },
       },
     }),
-    GitHubProvider({
-      // We don't need to provide the clientId and clientSecret here as it will be automatically provided from the .env file. This
-      // Only we have to keep in mind the env variable should be in the format of AUTH_{PROVIDER}_{ID|SECRET}
 
-      // clientId: process.env.AUTH_GITHUB_ID as string,
-      // clientSecret: process.env.AUTH_GITHUB_SECRET as string,
+    GoogleProvider({
+      clientId: process.env.GOOGLE_ID as string,
+      clientSecret: process.env.GOOGLE_SECRET as string,
+
       profile(profile) {
         return {
           ...profile,
-          id: profile.id.toString(),
-          role: 'user',
+          id: profile.sub,
+          role: 'admin',
         };
       },
       authorization: {
@@ -109,10 +105,8 @@ export const {
       return session;
     },
   },
+  secret: process.env.NEXTAUTH_SECRET,
   // jwt: {
   //   maxAge: 60, // 60 seconds
   // },
-  session: {
-    strategy: 'jwt',
-  },
-});
+};
