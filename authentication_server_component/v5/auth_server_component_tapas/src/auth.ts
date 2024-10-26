@@ -93,7 +93,7 @@ export const {
     }),
   ],
   callbacks: {
-    async jwt({ token, user, account }) {
+    async jwt({ token, user }) {
       if (user) {
         token.role = user.role;
       }
@@ -101,7 +101,7 @@ export const {
       return token;
     },
 
-    async session({ session, token, user }) {
+    async session({ session, token }) {
       if (token) {
         session.user.role = token.role as string;
       }
