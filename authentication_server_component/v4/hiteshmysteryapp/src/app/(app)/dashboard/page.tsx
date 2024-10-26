@@ -12,6 +12,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import axios, { AxiosError } from 'axios';
 import { Loader2, RefreshCcw } from 'lucide-react';
 import { useSession } from 'next-auth/react';
+import { redirect } from 'next/dist/server/api-utils';
 import React, { useCallback, useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
@@ -31,6 +32,16 @@ const Page = () => {
   };
 
   // useSession will be refetched on window focus. To stop that we added refetchOnWindowFocus={false} with SessionProvider in AuthProvider.tsx
+
+  // 1st Way
+  // const { data: session, status } = useSession({
+  //   required:true,
+  //   onUnauthenticated() {
+  //       redirect('/sign-in');
+  //   },
+  // });
+
+  // 2nd Way
   const { data: session, status } = useSession();
 
   // setValue is a stable function and it's reference doesn't gets changed between renders. And that's the reason can be used in

@@ -18,11 +18,25 @@ import { useForm } from 'react-hook-form';
 import { updateProfile } from './actions';
 import { User } from 'next-auth';
 import { useSession } from 'next-auth/react';
+import { redirect } from 'next/navigation';
 
 export default function SettingsPage({ user }: { user: User }) {
   const { toast } = useToast();
 
+  // Two ways of using useSession
+  // 1st Way
+  // const session = useSession({
+  //   required: true,
+  //   onUnauthenticated() {
+  //       redirect('/api/auth/signin?callbackUrl=/settings');
+  //   },
+  // });
+
+  // 2nd Way
   const session = useSession();
+  if (!session) {
+    redirect('/api/auth/signin?callbackUrl=/settings');
+  }
 
   const form = useForm<UpdateProfileValues>({
     resolver: zodResolver(updateProfileSchema),

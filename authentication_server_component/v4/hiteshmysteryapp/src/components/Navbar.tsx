@@ -7,6 +7,16 @@ import { Button } from './ui/button';
 
 const Navbar = () => {
   // useSession will be refetched on window focus. To stop that we added refetchOnWindowFocus={false} with SessionProvider in AuthProvider.tsx
+
+  // 1st Way
+  // const { data: session, status } = useSession({
+  //   required: true,
+  //   onUnauthenticated() {
+  //     redirect('/sign-in');
+  //   },
+  // });
+
+  // 2nd Way
   const { data: session, status } = useSession();
 
   const user = session?.user;
