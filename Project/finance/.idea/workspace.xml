@@ -4,56 +4,44 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e653e728-9524-4085-8caa-9317f3034d23" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../../first-app-tailwind/.eslintrc.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../first-app-tailwind/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../first-app-tailwind/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../first-app-tailwind/next.config.mjs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../first-app-tailwind/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../first-app-tailwind/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../first-app-tailwind/postcss.config.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../first-app-tailwind/public/next.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../first-app-tailwind/public/vercel.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../first-app-tailwind/src/app/about/page.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../first-app-tailwind/src/app/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../first-app-tailwind/src/app/globals.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../first-app-tailwind/src/app/layout.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../first-app-tailwind/src/app/order-product/page.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../first-app-tailwind/src/app/page.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../first-app-tailwind/src/app/product/[productId]/page.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../first-app-tailwind/src/app/product/[productId]/reviews/[reviewId]/error.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../first-app-tailwind/src/app/product/[productId]/reviews/[reviewId]/page.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../first-app-tailwind/src/app/product/[productId]/reviews/page.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../first-app-tailwind/src/app/profile/page.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../first-app-tailwind/src/types/IProductType.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../first-app-tailwind/src/types/IReviewType.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../first-app-tailwind/tailwind.config.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../first-app-tailwind/tsconfig.json" beforeDir="false" />
+    <list default="true" id="e653e728-9524-4085-8caa-9317f3034d23" name="Changes" comment="Add code">
+      <change afterPath="$PROJECT_DIR$/src/components/page-header.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="TypeScript JSX File" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "SoumyajeetDas"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;SoumyajeetDas&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/SoumyajeetDas/Next-JS.git",
-    "accountId": "4acc7710-2c1c-4ae6-a883-35d92352c6a0"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/SoumyajeetDas/Next-JS.git&quot;,
+    &quot;accountId&quot;: &quot;4acc7710-2c1c-4ae6-a883-35d92352c6a0&quot;
   }
-}]]></component>
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 6
 }</component>
   <component name="ProjectId" id="2oeNan6px1kAkporsKG2el413R0" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -63,16 +51,26 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
     "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.standard": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.standard": "",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "prettierjs.PrettierConfiguration.Package": "C:\\My Code\\Next-JS\\Project\\finance\\node_modules\\prettier",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "settings.editor.selected.configurable": "editing.templates",
     "ts.external.directory.path": "C:\\My Code\\Next-JS\\Project\\finance\\node_modules\\typescript\\lib",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="ReactDesignerToolWindowState">
+    <option name="myId2Visible">
+      <map>
+        <entry key="com.intellij.reactbuddy.reactComponents" value="false" />
+        <entry key="com.intellij.reactbuddy.reactInspector" value="false" />
+      </map>
+    </option>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -81,6 +79,9 @@
     </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="e653e728-9524-4085-8caa-9317f3034d23" name="Changes" comment="" />
@@ -90,6 +91,8 @@
       <updated>1731226150317</updated>
       <workItem from="1731226152735" duration="10000" />
       <workItem from="1731226177584" duration="630000" />
+      <workItem from="1731233495187" duration="44000" />
+      <workItem from="1731233549551" duration="845000" />
     </task>
     <servers />
   </component>
@@ -106,5 +109,17 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/app/layout.tsx</url>
+          <line>5</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
