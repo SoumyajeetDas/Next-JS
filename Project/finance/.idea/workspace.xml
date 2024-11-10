@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="e653e728-9524-4085-8caa-9317f3034d23" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../../first-app-tailwind/.eslintrc.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../first-app-tailwind/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../first-app-tailwind/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../first-app-tailwind/next.config.mjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../first-app-tailwind/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../first-app-tailwind/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../first-app-tailwind/postcss.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../first-app-tailwind/public/next.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../first-app-tailwind/public/vercel.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../first-app-tailwind/src/app/about/page.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../first-app-tailwind/src/app/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../first-app-tailwind/src/app/globals.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../first-app-tailwind/src/app/layout.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../first-app-tailwind/src/app/order-product/page.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../first-app-tailwind/src/app/page.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../first-app-tailwind/src/app/product/[productId]/page.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../first-app-tailwind/src/app/product/[productId]/reviews/[reviewId]/error.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../first-app-tailwind/src/app/product/[productId]/reviews/[reviewId]/page.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../first-app-tailwind/src/app/product/[productId]/reviews/page.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../first-app-tailwind/src/app/profile/page.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../first-app-tailwind/src/types/IProductType.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../first-app-tailwind/src/types/IReviewType.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../first-app-tailwind/tailwind.config.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../first-app-tailwind/tsconfig.json" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "SoumyajeetDas"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/SoumyajeetDas/Next-JS.git",
+    "accountId": "4acc7710-2c1c-4ae6-a883-35d92352c6a0"
+  }
+}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
+  <component name="ProjectId" id="2oeNan6px1kAkporsKG2el413R0" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "prettierjs.PrettierConfiguration.Package": "C:\\My Code\\Next-JS\\Project\\finance\\node_modules\\prettier",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "ts.external.directory.path": "C:\\My Code\\Next-JS\\Project\\finance\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-WS-242.23726.96" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e653e728-9524-4085-8caa-9317f3034d23" name="Changes" comment="" />
+      <created>1731226150317</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1731226150317</updated>
+      <workItem from="1731226152735" duration="10000" />
+      <workItem from="1731226177584" duration="630000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
