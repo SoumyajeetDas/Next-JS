@@ -5,8 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e653e728-9524-4085-8caa-9317f3034d23" name="Changes" comment="Add code">
-      <change afterPath="$PROJECT_DIR$/src/components/page-header.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,7 +58,8 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "prettierjs.PrettierConfiguration.Package": "C:\\My Code\\Next-JS\\Project\\finance\\node_modules\\prettier",
-    "settings.editor.selected.configurable": "editing.templates",
+    "settings.editor.selected.configurable": "inlay.hints",
+    "settings.editor.splitter.proportion": "0.2648699",
     "ts.external.directory.path": "C:\\My Code\\Next-JS\\Project\\finance\\node_modules\\typescript\\lib",
     "vue.rearranger.settings.migration": "true"
   }
@@ -92,8 +93,29 @@
       <workItem from="1731226152735" duration="10000" />
       <workItem from="1731226177584" duration="630000" />
       <workItem from="1731233495187" duration="44000" />
-      <workItem from="1731233549551" duration="845000" />
+      <workItem from="1731233549551" duration="3040000" />
+      <workItem from="1731297558864" duration="693000" />
+      <workItem from="1731298276123" duration="95000" />
+      <workItem from="1731298386540" duration="100000" />
+      <workItem from="1731298501130" duration="283000" />
     </task>
+    <task id="LOCAL-00001" summary="Add code">
+      <option name="closed" value="true" />
+      <created>1731236736165</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1731236736165</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Add code">
+      <option name="closed" value="true" />
+      <created>1731236776936</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1731236776936</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -110,13 +132,16 @@
       </map>
     </option>
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Add code" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add code" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/app/layout.tsx</url>
-          <line>5</line>
-          <properties lambdaOrdinal="-1" />
+          <line>6</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>
