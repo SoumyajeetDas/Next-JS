@@ -3,20 +3,7 @@
 import React from 'react';
 import { HandCoins, Landmark, PiggyBank, Wallet } from 'lucide-react';
 import useFormatCurrency from '@/hooks/useFormatCurrency';
-
-interface TransactionItemProps {
-  type: string;
-  category?: string;
-  description: string;
-  amount: number;
-}
-
-interface TypesMaptype {
-  [key: string]: {
-    icon: any;
-    colors: string;
-  };
-}
+import { TransactionItemProps, TypesMaptype } from '@/@models/types';
 
 const TransactionItem: React.FC<TransactionItemProps> = ({
   type,

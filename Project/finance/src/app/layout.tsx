@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import localFont from 'next/font/local';
 import './globals.css';
 import { PropsWithChildren } from 'react';
+import useServerDarkMode from '@/hooks/useServerDarkMode';
 
 const geistSans = localFont({
   src: './fonts/GeistVF.woff',
@@ -20,10 +21,12 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: Readonly<PropsWithChildren>) {
+  // This is although a custom hook but working in server side only
+  const theme = useServerDarkMode();
   return (
-    <html lang="en">
+    <html lang="en" className={theme}>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} min-h-screen flex flex-col`}
       >
         {children}
       </body>
