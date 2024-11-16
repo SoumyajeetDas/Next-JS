@@ -1,14 +1,37 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
+import React, { forwardRef } from 'react';
 
-import React from 'react';
-
-const Select = (props: any) => {
+export default forwardRef(function Select(props, ref) {
   return (
     <select
+      ref={ref}
       {...props}
-      className="w-full shadow-sm border-gray-300 bg-white dark:border-gray-700 dark:bg-gray-950"
-    ></select>
+      className="w-full rounded-md shadow-sm border-gray-300 bg-white dark:border-gray-700 dark:bg-gray-950"
+    />
   );
-};
+});
 
-export default Select;
+// This is equivalent to
+// export default forwardRef(function Select(props, ref) {
+//   return (
+//     <select
+//       ref={ref}
+//       children={props.children}
+//       className="w-full rounded-md shadow-sm border-gray-300 bg-white dark:border-gray-700 dark:bg-gray-950"
+//     />
+//   );
+// });
+
+// Which is equivalent to
+// export default forwardRef(function Select(props, ref) {
+//   return (
+
+//     <select
+//       ref={ref}
+//       className="w-full rounded-md shadow-sm border-gray-300 bg-white dark:border-gray-700 dark:bg-gray-950"
+//     >
+
+//      {props.children}
+
+//     </select>
+//   );
+// });

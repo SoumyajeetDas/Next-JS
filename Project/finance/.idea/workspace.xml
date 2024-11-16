@@ -5,31 +5,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e653e728-9524-4085-8caa-9317f3034d23" name="Changes" comment="Add code">
-      <change afterPath="$PROJECT_DIR$/db.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/@models/types.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/dashboard/components/transaction-list-fallback.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/dashboard/components/transaction-list.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/dashboard/components/trend-fallback.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/dashboard/loading.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/button.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/dark-mode-toggle.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/input.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/label.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/select.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/skeleton.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/transaction-summary-item.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hooks/useDarkMode.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hooks/useServerDarkMode.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/dashboard/components/transaction-form.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/dashboard/error.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/dashboard/transaction/add/page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lib/action.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lib/consts.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lib/validation.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lib/variants.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.json" beforeDir="false" afterPath="$PROJECT_DIR$/db.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/dashboard/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/dashboard/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/dashboard/components/transaction-list.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/dashboard/components/transaction-list.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/dashboard/components/trend.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/dashboard/components/trend.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/dashboard/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/dashboard/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/globals.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/playground/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/playground/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/page-header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/page-header.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/transaction-item.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/transaction-item.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/button.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/button.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/input.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/input.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/label.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/label.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/select.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/select.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tailwind.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -60,6 +55,9 @@
     &quot;accountId&quot;: &quot;4acc7710-2c1c-4ae6-a883-35d92352c6a0&quot;
   }
 }</component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="ProjectErrors" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 6
 }</component>
@@ -73,7 +71,12 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;JavaScript Debug.localhost:3000.executor&quot;: &quot;Debug&quot;,
+    &quot;Node.js.console.js.executor&quot;: &quot;Debug&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;database.data.extractors.current.export.id&quot;: &quot;Semicolon-separated_id&quot;,
+    &quot;database.data.extractors.current.id&quot;: &quot;Semicolon-separated_id&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/My Code/Next-JS/Project/finance/src/app/page.tsx&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
@@ -83,12 +86,19 @@
     &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;npm.dev.executor&quot;: &quot;Debug&quot;,
+    &quot;npm.start.executor&quot;: &quot;Debug&quot;,
     &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;C:\\My Code\\Next-JS\\Project\\finance\\node_modules\\prettier&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;editing.templates&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;settings.editor.splitter.proportion&quot;: &quot;0.2648699&quot;,
     &quot;ts.external.directory.path&quot;: &quot;C:\\My Code\\Next-JS\\Project\\finance\\node_modules\\typescript\\lib&quot;,
     &quot;two.files.diff.last.used.file&quot;: &quot;C:/My Code/Next-JS/Project/finance/src/app/page.tsx&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;informix&quot;
+    ]
   }
 }</component>
   <component name="ReactDesignerToolWindowState">
@@ -104,10 +114,42 @@
       <recent name="C:\My Code\Next-JS\Project\finance\src\app\dashboard\components" />
     </key>
   </component>
+  <component name="RunManager" selected="npm.dev">
+    <configuration name="localhost:3000" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:3000">
+      <method v="2" />
+    </configuration>
+    <configuration name="dev" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="dev" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.dev" />
+        <item itemvalue="npm.start" />
+        <item itemvalue="JavaScript Debug.localhost:3000" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-WS-242.23726.96" />
+        <option value="bundled-js-predefined-d6986cc7102b-e768b9ed790e-JavaScript-WS-243.21565.180" />
       </set>
     </attachedChunks>
   </component>
@@ -137,7 +179,10 @@
       <workItem from="1731430394541" duration="260000" />
       <workItem from="1731430680258" duration="73000" />
       <workItem from="1731430777065" duration="557000" />
-      <workItem from="1731588518900" duration="12491000" />
+      <workItem from="1731588518900" duration="12754000" />
+      <workItem from="1731730603349" duration="753000" />
+      <workItem from="1731733188534" duration="11515000" />
+      <workItem from="1731748260738" duration="2694000" />
     </task>
     <task id="LOCAL-00001" summary="Add code">
       <option name="closed" value="true" />
@@ -179,7 +224,15 @@
       <option name="project" value="LOCAL" />
       <updated>1731430825770</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Add code">
+      <option name="closed" value="true" />
+      <created>1731602004322</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1731602004322</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -199,5 +252,16 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Add code" />
     <option name="LAST_COMMIT_MESSAGE" value="Add code" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/hooks/useFormatCurrency.ts</url>
+          <line>3</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

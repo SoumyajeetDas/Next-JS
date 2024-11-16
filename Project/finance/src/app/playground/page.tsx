@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
+
 import React from 'react';
 import PageHeader from '@/components/page-header';
 import TransactionItem from '@/components/transaction-item';
@@ -8,6 +10,10 @@ import Input from '@/components/input';
 import Select from '@/components/select';
 import Skeleton from '@/components/skeleton';
 import Trend from '@/components/trend';
+
+export const metadata = {
+  title: 'Playground',
+};
 
 const Page = () => {
   return (
@@ -110,6 +116,7 @@ const Page = () => {
 
           <div>
             <Label className="mb-1">City</Label>
+            {/* @ts-ignore*/}
             <Select>
               <option>Warsaw</option>
               <option>Berlin</option>

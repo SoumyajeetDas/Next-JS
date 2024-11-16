@@ -1,17 +1,25 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
-import React from 'react';
+import React, { ForwardedRef, forwardRef } from 'react';
 
-const Input = (props: any) => {
-  const styles: { [key: string]: string } = {
+export default forwardRef(function Input(
+  props: any,
+  ref: ForwardedRef<HTMLInputElement>,
+) {
+  const styles = {
     checkbox:
       'rounded border-gray-300 text-gray-700 bg-white dark:bg-gray-950 dark:text-gray-500 shadow-sm',
     default:
       'w-full rounded-md shadow-sm border-gray-300 bg-white dark:border-gray-700 dark:bg-gray-950',
   };
-  return (
-    <input {...props} className={styles[props.type] ?? styles['default']} />
-  );
-};
 
-export default Input;
+  return (
+    <input
+      ref={ref}
+      {...props}
+      // @ts-ignore
+      className={styles[props.type] ?? styles['default']}
+    />
+  );
+});
