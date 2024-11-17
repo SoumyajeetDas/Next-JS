@@ -2,6 +2,7 @@ import React from 'react';
 import TransactionItem from '@/components/transaction-item';
 import { TransactionListTypes } from '@/@models/types';
 import TransactionSummaryItem from '@/components/transaction-summary-item';
+import { createClient } from '@/lib/supbase/server';
 
 const groupAndSumTransactionsByDate = (
   transactions: TransactionListTypes[],
@@ -22,14 +23,23 @@ const groupAndSumTransactionsByDate = (
   return grouped;
 };
 const TransactionList = async () => {
-  const response = await fetch(`${process.env.API_URL}/transactions`, {
-    next: {
-      tags: ['transaction-list'],
-    },
-  });
-  const transactions = (await response.json()) as TransactionListTypes[];
+  // const response = await fetch(`${process.env.API_URL}/transactions`, {
+  //   next: {
+  //     tags: ['transaction-list'],
+  //   },
+  // });
+  // const transactions = (await response.json()) as TransactionListTypes[];
 
-  const grouped = groupAndSumTransactionsByDate(transactions);
+  const supBase = createClient();
+
+  const { data: transactions } = await supBase
+    .from('transactions')
+    .select('*')
+    .order('created_at', { ascending: true });
+
+  const grouped = groupAndSumTransactionsByDate(
+    transactions as TransactionListTypes[],
+  );
 
   return (
     <div className="space-y-8">

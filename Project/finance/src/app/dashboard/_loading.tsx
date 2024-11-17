@@ -1,8 +1,8 @@
 import React from 'react';
 import TransactionListFallback from '@/app/dashboard/components/transaction-list-fallback';
 
-const Loading = () => {
+const _loading = () => {
   return <TransactionListFallback />;
 };
 
-export default Loading;
+export default _loading;

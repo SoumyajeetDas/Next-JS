@@ -22,7 +22,7 @@ const Trend = ({
     Saving: 'text-yellow-700 dark:text-yellow-300',
   };
 
-  // use Memo 1st Technique
+  /* use Memo 1st Technique */
   // const calcPercentageChange = (amountData: number, prevAmountData: number) => {
   //   if (prevAmountData === 0) return 0;
   //
@@ -31,7 +31,7 @@ const Trend = ({
   //
   // const percentageChange = useMemo(() => calcPercentageChange(amount, prevAmount), [amount, prevAmount]);
 
-  // use Memo 2nd Technique
+  /* use Memo 2nd Technique */
   const percentageChange = useMemo(() => {
     if (!prevAmount || !amount) return 0;
 

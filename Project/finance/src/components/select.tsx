@@ -10,7 +10,7 @@ export default forwardRef(function Select(props, ref) {
   );
 });
 
-// This is equivalent to
+/* This is equivalent to */
 // export default forwardRef(function Select(props, ref) {
 //   return (
 //     <select
@@ -21,7 +21,7 @@ export default forwardRef(function Select(props, ref) {
 //   );
 // });
 
-// Which is equivalent to
+/* Which is equivalent to */
 // export default forwardRef(function Select(props, ref) {
 //   return (
 
