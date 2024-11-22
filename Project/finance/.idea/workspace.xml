@@ -5,9 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e653e728-9524-4085-8caa-9317f3034d23" name="Changes" comment="Add code">
+      <change afterPath="$PROJECT_DIR$/seed.mjs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/dashboard/components/range.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/dashboard/components/transaction-list-wrapper.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lib/utils.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/dashboard/components/transaction-form.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/dashboard/components/transaction-form.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/validation.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/validation.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/dashboard/components/transaction-list.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/dashboard/components/transaction-list.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/dashboard/components/trend.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/dashboard/components/trend.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/dashboard/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/dashboard/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/action.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/action.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,8 +26,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="TypeScript File" />
         <option value="TypeScript JSX File" />
+        <option value="JavaScript File" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
@@ -51,6 +61,8 @@
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">
+    <option name="autoscrollFromSource" value="true" />
+    <option name="autoscrollToSource" value="true" />
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
@@ -74,7 +86,7 @@
     "npm.dev.executor": "Debug",
     "npm.start.executor": "Debug",
     "prettierjs.PrettierConfiguration.Package": "C:\\My Code\\Next-JS\\Project\\finance\\node_modules\\prettier",
-    "settings.editor.selected.configurable": "reference.settings.ide.settings.notifications",
+    "settings.editor.selected.configurable": "editor.preferences.import",
     "settings.editor.splitter.proportion": "0.2648699",
     "ts.external.directory.path": "C:\\My Code\\Next-JS\\Project\\finance\\node_modules\\typescript\\lib",
     "two.files.diff.last.used.file": "C:/My Code/Next-JS/Project/finance/src/app/page.tsx",
@@ -172,7 +184,9 @@
       <workItem from="1731770591261" duration="3728000" />
       <workItem from="1731820619970" duration="9473000" />
       <workItem from="1731856223365" duration="3547000" />
-      <workItem from="1731859817745" duration="2976000" />
+      <workItem from="1731859817745" duration="3533000" />
+      <workItem from="1732034047262" duration="1187000" />
+      <workItem from="1732270345085" duration="15711000" />
     </task>
     <task id="LOCAL-00001" summary="Add code">
       <option name="closed" value="true" />
@@ -238,7 +252,15 @@
       <option name="project" value="LOCAL" />
       <updated>1731774307658</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Add code">
+      <option name="closed" value="true" />
+      <created>1731863367561</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1731863367561</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
