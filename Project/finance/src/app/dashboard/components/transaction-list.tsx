@@ -1,10 +1,12 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable @typescript-eslint/ban-ts-comment */
+
 'use client';
 
 import React, { useState } from 'react';
 import TransactionItem from '@/components/transaction-item';
 import { TransactionListTypes } from '@/@models/types';
 import TransactionSummaryItem from '@/components/transaction-summary-item';
-import { createClient } from '@/lib/supbase/server';
 import groupAndSumTransactionsByDate from '@/lib/utils';
 import { fetchTransactions } from '@/lib/action';
 import Button from '@/components/button';
@@ -25,7 +27,6 @@ const TransactionList = ({
   // const transactions = (await response.json()) as TransactionListTypes[];
 
   const [transactions, setTransactions] = useState(initialTransactions);
-  const [offset, setOffset] = useState(initialTransactions.length);
   const [loading, setLoading] = useState(false);
 
   const [buttonHidden, setButtonHidden] = useState(
@@ -38,16 +39,27 @@ const TransactionList = ({
     setLoading(true);
     let nextTransactions: string | any[] = [];
     try {
-      nextTransactions = await fetchTransactions(range, offset, 10);
+      nextTransactions = await fetchTransactions(
+        range,
+        transactions.length,
+        10,
+      );
       setButtonHidden(nextTransactions.length === 0);
-      setOffset((prevValue) => prevValue + 10);
+
       setTransactions((prevTransactions) => [
         ...prevTransactions,
+        // @ts-ignore
         ...nextTransactions,
       ]);
     } finally {
       setLoading(false);
     }
+  };
+
+  //Created a HOF here as the function will be called from the child component during onClick, but the function parameter will be coming from parent component
+  const handleRemoved = (id: string) => () => {
+    console.log('Calling handleRemoved with id', id);
+    setTransactions((prev) => [...prev].filter((t) => t.id !== id));
   };
 
   return (
@@ -59,7 +71,10 @@ const TransactionList = ({
           <section className="space-y-4">
             {transactions.map((transaction) => (
               <div key={transaction.id}>
-                <TransactionItem {...transaction} />
+                <TransactionItem
+                  {...transaction}
+                  onRemove={handleRemoved(transaction.id)}
+                />
               </div>
             ))}
           </section>
@@ -71,7 +86,7 @@ const TransactionList = ({
           No transactions found
         </div>
       )}
-      {!buttonHidden && (
+      {!buttonHidden && transactions.length > 10 && (
         <div className="flex justify-center">
           <Button variant="ghost" onClick={handleClick} disabled={loading}>
             <div className="flex items-center space-x-1">

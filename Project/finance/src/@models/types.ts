@@ -1,10 +1,12 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
 export interface TransactionItemProps {
+  id: string;
   type: string;
   category?: string;
   description: string;
   amount: number;
+  onRemove: (id: string) => void;
 }
 
 export interface TypesMaptype {
@@ -15,6 +17,5 @@ export interface TypesMaptype {
 }
 
 export type TransactionListTypes = TransactionItemProps & {
-  id: string;
   created_at: string;
 };

@@ -41,3 +41,29 @@ export async function fetchTransactions(range: string, offset = 0, limit = 10) {
   if (error) throw new Error("We can't fetch transactions");
   return data;
 }
+
+export async function updateTransaction(id: string, formData: FormData) {
+  const validated = transactionSchema.safeParse(formData);
+  if (!validated.success) {
+    throw new Error('Invalid data');
+  }
+  const { error } = await createClient()
+    .from('transactions')
+    .update(formData)
+    .eq('id', id);
+  if (error) {
+    throw new Error('Failed creating the transaction');
+  }
+  revalidatePath('/dashboard');
+}
+
+export async function deleteTransaction(id: string) {
+  const supabase = createClient();
+  const { error } = await supabase.from('transactions').delete().eq('id', id);
+  if (error) throw new Error(`Could not delete the transaction ${id}`);
+  revalidatePath('/dashboard');
+}
+
+export async function login(formData: FormData) {
+  console.log(formData);
+}

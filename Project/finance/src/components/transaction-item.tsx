@@ -1,15 +1,20 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
 import React from 'react';
-import { HandCoins, Landmark, PiggyBank, Wallet } from 'lucide-react';
+import { HandCoins, Landmark, Pencil, PiggyBank, Wallet } from 'lucide-react';
 import useFormatCurrency from '@/hooks/useFormatCurrency';
 import { TransactionItemProps, TypesMaptype } from '@/@models/types';
+import TransactionItemRemoveButton from '@/components/transaction-item-remove-button';
+import Link from 'next/link';
+import { sizes, variants } from '@/lib/variants';
 
 const TransactionItem: React.FC<TransactionItemProps> = ({
+  id,
   type,
   category,
   description,
   amount,
+  onRemove,
 }) => {
   const typesMap: TypesMaptype = {
     Income: {
@@ -52,6 +57,16 @@ const TransactionItem: React.FC<TransactionItemProps> = ({
       <div className="min-w-[70px] text-right">{formattedAmount}</div>
 
       <div className="min-w-[50px] flex justify-end">···</div>
+
+      <div className="min-w-[100px] flex justify-end">
+        <Link
+          href={`/dashboard/transaction/${id}/edit`}
+          className={`${variants['ghost']} ${sizes['xs']}`}
+        >
+          <Pencil className="w-4 h-4" />
+        </Link>
+        <TransactionItemRemoveButton id={id} onRemove={onRemove} />
+      </div>
     </div>
   );
 };

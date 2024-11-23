@@ -13,12 +13,15 @@ import { useForm } from 'react-hook-form';
 import transactionSchema from '@/lib/validation';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { undefined, z } from 'zod';
-import { createTransaction } from '@/lib/action';
+import { createTransaction, updateTransaction } from '@/lib/action';
 import { useRouter } from 'next/navigation';
 import FormError from '@/components/form-error';
 import DevT from '@/components/formDevtool';
+import { TransactionListTypes } from '@/@models/types';
 
-const TransactionForm = () => {
+const TransactionForm: React.FC<{
+  initialData: TransactionListTypes;
+}> = ({ initialData }) => {
   const {
     register,
     handleSubmit,
@@ -29,21 +32,29 @@ const TransactionForm = () => {
   } = useForm<z.infer<typeof transactionSchema>>({
     mode: 'onTouched',
     resolver: zodResolver(transactionSchema),
+    defaultValues: initialData ?? {
+      created_at: new Date().toISOString().split('T')[0],
+    },
   });
   const router = useRouter();
   const [isSaving, setSaving] = useState(false);
   const [lastError, setLastError] = useState<null | undefined | Error>();
   const type = watch('type');
 
-  const onSubmit = async (data: z.infer<typeof transactionSchema>) => {
-    console.log(data);
+  const editing = Boolean(initialData);
 
+  const onSubmit = async (data: z.infer<typeof transactionSchema>) => {
     setSaving(true);
 
     setLastError(undefined);
 
     try {
-      await createTransaction(data);
+      if (editing) {
+        // Edit action
+        await updateTransaction(initialData.id, data as unknown as FormData);
+      } else {
+        await createTransaction(data);
+      }
       router.push('/dashboard');
     } catch (error) {
       setLastError(error as Error);
@@ -88,7 +99,7 @@ const TransactionForm = () => {
 
           <div>
             <Label className="mb-1">Date</Label>
-            <Input {...register('created_at')} />
+            <Input {...register('created_at')} disabled={editing} />
             <FormError error={errors.created_at as unknown as Error} />
           </div>
 

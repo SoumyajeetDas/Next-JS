@@ -6,7 +6,7 @@ export const variants: {
   outline:
     'border border-gray-300 dark:border-gray-500 rounded-md hover:bg-gray-300 dark:hover:bg-gray-500',
   ghost:
-    'rounded-md bg-white dark:bg-black hover:bg-gray-200 dark:hover:bg-gray-500',
+    'rounded-md bg-white dark:bg-black hover:bg-gray-200 dark:hover:bg-gray-500 disabled:opacity-25',
 };
 export const sizes: {
   [key: string]: string;
