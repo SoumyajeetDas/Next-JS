@@ -64,6 +64,22 @@ export async function deleteTransaction(id: string) {
   revalidatePath('/dashboard');
 }
 
-export async function login(formData: FormData) {
-  console.log(formData);
+export async function login(_prevState, formData: FormData) {
+  const supabase = createClient();
+  const email = formData.get('email') as string;
+  const { error } = await supabase.auth.signInWithOtp({
+    email,
+    options: {
+      shouldCreateUser: true,
+    },
+  });
+  if (error) {
+    return {
+      error: true,
+      message: 'Error authenticating!',
+    };
+  }
+  return {
+    message: `Email sent to ${email}`,
+  };
 }
