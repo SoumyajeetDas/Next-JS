@@ -9,12 +9,17 @@ import { ErrorBoundary } from 'react-error-boundary';
 import TransactionListFallback from '@/app/dashboard/components/transaction-list-fallback';
 import Range from '@/app/dashboard/components/range';
 import TransactionListWrapper from '@/app/dashboard/components/transaction-list-wrapper';
+import { createClient } from '@/lib/supbase/server';
 
 // This page will be dynamically rendered as it takes query parameters
-const Page: React.FC<{ searchParams: { range: string } }> = ({
+const Page: React.FC<{ searchParams: { range: string } }> = async ({
   searchParams,
 }) => {
   const range = searchParams?.range ?? 'last30days';
+
+  const supabase = createClient();
+  console.log(await supabase.auth.getUser());
+
   return (
     <>
       <section className="mb-8 flex justify-between items-center">

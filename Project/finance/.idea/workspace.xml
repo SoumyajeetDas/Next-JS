@@ -5,9 +5,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e653e728-9524-4085-8caa-9317f3034d23" name="Changes" comment="Add code">
-      <change afterPath="$PROJECT_DIR$/src/components/submit-button.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/auth/confirm/route.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/dashboard/settings/avatar/page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/dashboard/settings/components/settings-form.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/dashboard/settings/components/side-nav.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/dashboard/settings/layout.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/dashboard/settings/page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/dashboard/settings/profile/page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/alert-error.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/alert-success.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/alert.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/avatar.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/sign-out-button.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/user-details.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lib/supbase/middleware.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/middleware.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/(auth)/login/components/login-form.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(auth)/login/components/login-form.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/next.config.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/next.config.mjs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/dashboard/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/dashboard/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/dark-mode-toggle.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/dark-mode-toggle.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/page-header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/page-header.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/lib/action.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/action.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -58,39 +75,39 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;JavaScript Debug.localhost:3000.executor&quot;: &quot;Debug&quot;,
-    &quot;Node.js.console.js.executor&quot;: &quot;Debug&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;database.data.extractors.current.export.id&quot;: &quot;Semicolon-separated_id&quot;,
-    &quot;database.data.extractors.current.id&quot;: &quot;Semicolon-separated_id&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/My Code/Next-JS/Project/finance/src/app/page.tsx&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;npm.dev.executor&quot;: &quot;Debug&quot;,
-    &quot;npm.start.executor&quot;: &quot;Debug&quot;,
-    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;C:\\My Code\\Next-JS\\Project\\finance\\node_modules\\prettier&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;settings.typescriptcompiler&quot;,
-    &quot;settings.editor.splitter.proportion&quot;: &quot;0.2648699&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\My Code\\Next-JS\\Project\\finance\\node_modules\\typescript\\lib&quot;,
-    &quot;two.files.diff.last.used.file&quot;: &quot;C:/My Code/Next-JS/Project/finance/src/app/page.tsx&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "JavaScript Debug.localhost:3000.executor": "Debug",
+    "Node.js.console.js.executor": "Debug",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "database.data.extractors.current.export.id": "Semicolon-separated_id",
+    "database.data.extractors.current.id": "Semicolon-separated_id",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/My Code/Next-JS/Project/finance/src/app/page.tsx",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.standard": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.standard": "",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "npm.dev.executor": "Debug",
+    "npm.start.executor": "Debug",
+    "prettierjs.PrettierConfiguration.Package": "C:\\My Code\\Next-JS\\Project\\finance\\node_modules\\prettier",
+    "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors.JavaScript",
+    "settings.editor.splitter.proportion": "0.2648699",
+    "ts.external.directory.path": "C:\\My Code\\Next-JS\\Project\\finance\\node_modules\\typescript\\lib",
+    "two.files.diff.last.used.file": "C:/My Code/Next-JS/Project/finance/src/app/page.tsx",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;informix&quot;,
-      &quot;postgresql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "informix",
+      "postgresql"
     ]
   }
-}</component>
+}]]></component>
   <component name="ReactDesignerToolWindowState">
     <option name="myId2Visible">
       <map>
@@ -101,6 +118,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\My Code\Next-JS\Project\finance\src" />
       <recent name="C:\My Code\Next-JS\Project\finance\src\app\dashboard\components" />
     </key>
   </component>
@@ -182,7 +200,8 @@
       <workItem from="1732348148711" duration="221000" />
       <workItem from="1732348768730" duration="5105000" />
       <workItem from="1732372954363" duration="6014000" />
-      <workItem from="1732449123897" duration="4029000" />
+      <workItem from="1732449123897" duration="4119000" />
+      <workItem from="1732509490466" duration="16997000" />
     </task>
     <task id="LOCAL-00001" summary="Add code">
       <option name="closed" value="true" />
@@ -272,7 +291,15 @@
       <option name="project" value="LOCAL" />
       <updated>1732382175016</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Add code">
+      <option name="closed" value="true" />
+      <created>1732453681495</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1732453681496</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

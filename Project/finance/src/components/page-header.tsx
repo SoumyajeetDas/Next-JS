@@ -1,11 +1,9 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import Link from 'next/link';
-import DarkModeToggle from '@/components/dark-mode-toggle';
-import useServerDarkMode from '@/hooks/useServerDarkMode';
+import UserDetails from '@/components/user-details';
 
-const PageHeader: React.FC<{ className: string }> = ({ className }) => {
+const PageHeader: React.FC<{ className: string }> = async ({ className }) => {
   // This is although a custom hook but working in server side only
-  const theme = useServerDarkMode();
 
   return (
     <header className={`flex justify-between items-center ${className}`}>
@@ -16,10 +14,9 @@ const PageHeader: React.FC<{ className: string }> = ({ className }) => {
         Finance App
       </Link>
 
-      <div className="flex items-center space-x-4">
-        <DarkModeToggle defaultMode={theme} />
-        <div>User Dropdown</div>
-      </div>
+      <Suspense fallback={<div>Loading User Details...</div>}>
+        <UserDetails />
+      </Suspense>
     </header>
   );
 };
