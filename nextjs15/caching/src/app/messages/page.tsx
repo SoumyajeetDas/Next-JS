@@ -1,6 +1,6 @@
-import Messages, { MessageType } from '@/components/messages';
+import Messages from '@/components/messages';
 
-const callMe = async (): Promise<MessageType[]> => {
+const callMe = async (): Promise<{ time: string }> => {
   // As this page.tsx will be the children of the layout.tsx, and revalidate:0 is added in the layout.tsx,
   // so this fetch will also be cached like the one in the layout.tsx
 
@@ -36,24 +36,26 @@ const callMe = async (): Promise<MessageType[]> => {
   // );
 
   // The cache will work only for this fetch function.
-  const response = await fetch('http://localhost:8080/messages', {
+  const response = await fetch('http://localhost:8080/time', {
+    // cache: 'default',
     // next: {
-    //   revalidate: 5,
+    //   revalidate: 20,
     // },
   });
 
-  const messages = await response.json();
+  const messages: { time: string } = await response.json();
+
   return messages;
 };
 
 const MessagesPage = async () => {
   const messages = await callMe();
 
-  if (!messages || messages.length === 0) {
+  if (!messages || messages?.time?.length === 0) {
     return <p>No messages found</p>;
   }
 
-  return <Messages messages={messages} />;
+  return <Messages messages={messages?.time} />;
 };
 
 export default MessagesPage;
