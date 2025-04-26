@@ -47,7 +47,7 @@ const dataFetching = async (): Promise<number> => {
   // The cache will work only for this fetch function.
   const response = await fetch('http://localhost:8080/messages', {
     next: {
-      revalidate: 5,
+      revalidate: 4,
     },
   });
 

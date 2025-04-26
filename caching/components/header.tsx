@@ -9,7 +9,11 @@ const callMes = async (): Promise<number> => {
   //   'https://6652d3e3813d78e6d6d6538e.mockapi.io/api/products',
   // );
 
-  const response = await fetch('http://localhost:8080/messages');
+  const response = await fetch('http://localhost:8080/messages', {
+    // next: {
+    //   revalidate: 4,
+    // },
+  });
 
   const messages = await response.json();
   const totalMessages = messages.length;
@@ -36,6 +40,9 @@ const Header: React.FC = async () => {
           </li>
           <li>
             <Link href="/messages/new">New Message</Link>
+          </li>
+          <li>
+            <Link href="/anothermessage">Another New Message</Link>
           </li>
           {/* <li>
             <form action={refreshData}>

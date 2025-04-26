@@ -46,14 +46,20 @@ const callMe = async (): Promise<MessageType[]> => {
   return messages;
 };
 
-const MessagesPage = async () => {
+const AnotherMessagesPage = async () => {
   const messages = await callMe();
 
   if (!messages || messages.length === 0) {
     return <p>No messages found</p>;
   }
 
-  return <Messages messages={messages} />;
+  return (
+    <ul className="messages">
+      {messages.map((message: MessageType) => (
+        <li key={message.id}>{message.text}</li>
+      ))}
+    </ul>
+  );
 };
 
-export default MessagesPage;
+export default AnotherMessagesPage;

@@ -4,7 +4,7 @@ const app = express();
 
 app.get('/messages', (req, res) => {
   const requestSource = req.headers['x-id'];
-  console.log(`${new Date().toISOString()}: EXECUTING /messages on backend from ${requestSource}`);
+  console.log(`${new Date().toISOString()}: EXECUTING /messages on backend from /messages)}`);
   res.json([
     { id: 1, text: 'Hello World' },
     { id: 2, text: 'Another message from the separate backend' },
@@ -13,7 +13,7 @@ app.get('/messages', (req, res) => {
 
 app.get('/another', (req, res) => {
   const requestSource = req.headers['x-id'];
-  console.log(`${new Date().toISOString()}: EXECUTING /another on backend from ${requestSource}`);
+  console.log(`${new Date().toISOString()}: EXECUTING /another on backend from /another`);
   res.json([
     { id: 1, text: 'Hello World' },
     { id: 2, text: 'Another message from the separate backend' },
