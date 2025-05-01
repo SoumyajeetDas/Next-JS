@@ -5,7 +5,7 @@ import { fetchData, getdata } from '@/lib/lib';
 import React from 'react';
 
 const Second = async () => {
-  const response = await fetchData();
+  const response = await fetchData(2);
 
   return (
     <>

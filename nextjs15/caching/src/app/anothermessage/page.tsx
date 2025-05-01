@@ -1,4 +1,5 @@
-export const revalidate = 5;
+// import axios from 'axios';
+import { cookies } from 'next/headers';
 
 const callMe = async (): Promise<{ time: string }> => {
   // As this page.tsx will be the children of the layout.tsx, and revalidate:0 is added in the layout.tsx,
@@ -38,19 +39,19 @@ const callMe = async (): Promise<{ time: string }> => {
   // The cache will work only for this fetch function.
   // const response = await fetch('http://localhost:8080/messages');
 
-  const response = await fetch('http://localhost:8080/time', {
-    // cache: 'default',
-    // next: {
-    //   revalidate: 5,
-    // },
-  });
+  // const response = await axios.get('http://localhost:8080/time');
+
+  const response = await fetch('http://localhost:8080/time');
 
   const messages: { time: string } = await response.json();
+
   return messages;
 };
 
 const AnotherMessagesPage = async () => {
   const messages = await callMe();
+  // Dynamic API is making the whole component dynamic, so even the fetch before this will be dynamic.
+  // (await cookies()).getAll();
 
   if (!messages || messages?.time?.length === 0) {
     return <p>No messages found</p>;

@@ -1,8 +1,8 @@
 import axios from 'axios';
 import { cache } from 'react';
 
-export const fetchData = cache(async () => {
-  const data = await axios(`http://localhost:8080/messages/1`);
+export const fetchData = cache(async (id: number) => {
+  const data = await axios(`http://localhost:8080/messages/${id}`);
 
   return data?.data;
 });

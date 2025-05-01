@@ -1,10 +1,8 @@
-// export const dynamic = 'force-dynamic'; // This will make the page dynamic and not cache it
-
 import { fetchData, getdata } from '@/lib/lib';
 import React from 'react';
 
 const First = async () => {
-  const response = await fetchData();
+  const response = await fetchData(2);
 
   return (
     <>
